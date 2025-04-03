@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameActive = false;
 
     submitBtn.addEventListener('click', () => {
-        player1Name = document.getElementById('player-1').value.trim() || 'Player 1';
-        player2Name = document.getElementById('player-2').value.trim() || 'Player 2';
+        player1Name = document.getElementById('player1').value.trim() || 'Player1';
+        player2Name = document.getElementById('player2').value.trim() || 'Player2';
         
         if (player1Name && player2Name) {
             inputDiv.classList.add('hidden');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cellIndex = parseInt(cell.id) - 1;
             
             if (board[cellIndex] === '') {
-                board[cellIndex] = currentPlayer === player1Name ? 'X' : 'O';
+                board[cellIndex] = currentPlayer === player1Name ? 'x' : 'o'; // Changed to lowercase
                 cell.textContent = board[cellIndex];
                 
                 if (checkWin()) {
